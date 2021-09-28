@@ -16,10 +16,14 @@ describe('Beer List Container page', () => {
   afterAll(() => server.close());
 
   it('renders a list of beer', async () => {
-    render(
+    const { container } = render(
       <MemoryRouter>
         <ListContainer />
       </MemoryRouter>
     );
+
+    const ul = await screen.findByRole('list', { name: 'beer-list' });
+    expect(ul).not.toBeEmptyDOMElement();
+    expect(container).toMatchSnapshot();
   });
 });
