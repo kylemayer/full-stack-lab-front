@@ -6,7 +6,7 @@ import { setupServer } from 'msw/node';
 import ListContainer from '../containers/ListContainer';
 
 const server = setupServer(
-  rest.get('http://localhost:7890/api/v1/beer', (req, res, ctx) => {
+  rest.get('http://localhost:7890/api/v1/beers', (req, res, ctx) => {
     return res(ctx.json());
   })
 );
