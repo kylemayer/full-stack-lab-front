@@ -1,5 +1,13 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import BeerList from './beer/BeerList';
 
 export default function App() {
-  return <h1>Hello World</h1>;
+  return (
+    <Switch>
+      <Route exact path="/">
+        <BeerList />
+      </Route>
+    </Switch>
+  );
 }
